@@ -33,6 +33,7 @@ export default defineConfig({
       },
     }),
   ],
+  base: "/dev-des/",
   define: { "process.env": {} },
   resolve: {
     alias: {
@@ -43,4 +44,6 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+  // Include publicPath configuration
+  publicPath: process.env.NODE_ENV === "production" ? "/dev-des/" : "/",
 });
